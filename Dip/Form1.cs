@@ -319,7 +319,14 @@ namespace Dip
             dataGridViewResult.Rows[n + 1].HeaderCell.Value = "Затраты труда";
             dataGridViewResult.Rows[n + 2].HeaderCell.Value = "Стоимость производственных фондов";
             dataGridViewResult.Rows[n + 3].HeaderCell.Value = "Валовая продукция";
-            //dataGridViewResult.DataSource = splitEnd;
+            for (int i = 0; i < splitEnd.ColumnCount; i++)
+            {
+                for (int j = 0; j < splitEnd.RowCount; j++)
+                {
+                    dataGridViewResult.Rows[j].Cells[i].Value = splitEnd[j, i];
+                }
+            }
+            
         }
 
         private void dataGridViewResult_CellContentClick(object sender, DataGridViewCellEventArgs e)
