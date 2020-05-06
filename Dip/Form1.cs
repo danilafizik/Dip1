@@ -250,27 +250,28 @@ namespace Dip
                 //Получение плановых объёмов чистой продукции:
                 var W = operationMatrix.PlanNetProd(X1, x);
 
-                //Приклеивание матрицы X1 к матрице plan справа 
+                //Приклеивание матрицы X1 к матрице plan справа:
                 var RRR = plan.Append(X1.Transpose());
 
-                //Создаём двухэлементный вектор с нулями
+                //Создание двухэлементного вектора с нулями:
                 Vector<double> nulle = new DenseVector(2);
 
-                //Добавляем к X! и plan 4 пустых строки снизу
+                //Добавление к X! и plan 4 пустых строки снизу:
                 RRR = RRR.InsertRow(RRR.RowCount, nulle);
                 RRR = RRR.InsertRow(RRR.RowCount, nulle);
                 RRR = RRR.InsertRow(RRR.RowCount, nulle);
                 RRR = RRR.InsertRow(RRR.RowCount, nulle);
 
-                //Добавляем к x снизу строки:
+                //Добавление к x снизу строки:
                 var split = x.InsertRow(x.RowCount, W.Row(0));
                 split = split.InsertRow(split.RowCount, Li.Row(0));
                 split = split.InsertRow(split.RowCount, F1.Row(0));
                 split = split.InsertRow(split.RowCount, X1.Row(0));
 
-                //Склеиваем матрицы:
+                //Склеивание матриц:
                 var splitEnd = split.Append(RRR);
 
+                //Формирование выводной таблицы:
                 dataGridViewResult.RowCount = n + 4;
                 dataGridViewResult.ColumnCount = n + 2;
                 for (int i = 0; i < n; i++)
@@ -286,14 +287,18 @@ namespace Dip
                 dataGridViewResult.Rows[n + 1].HeaderCell.Value = "Затраты труда";
                 dataGridViewResult.Rows[n + 2].HeaderCell.Value = "Стоимость производственных фондов";
                 dataGridViewResult.Rows[n + 3].HeaderCell.Value = "Валовая продукция";
+
+                //Заполнение выводной таблицы данными с округлением 
+                //до двух знаков после запятой (округление вверх от 5 по модулю):
                 for (int i = 0; i < splitEnd.ColumnCount; i++)
                 {
                     for (int j = 0; j < splitEnd.RowCount; j++)
                     {
-                        dataGridViewResult.Rows[j].Cells[i].Value = splitEnd[j, i];
+                        dataGridViewResult.Rows[j].Cells[i].Value = Math.Round(splitEnd[j, i], 2, MidpointRounding.AwayFromZero);
                     }
                 }
 
+                //Удаление нулей из незадействованной области:
                 for (int i = n; i < splitEnd.RowCount; i++)
                 {
                     for (int j = n; j < splitEnd.ColumnCount; j++)
