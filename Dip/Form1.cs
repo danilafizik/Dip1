@@ -113,7 +113,7 @@ namespace Dip
             }
             dataGridViewArray.RowCount = n + 2;
             dataGridViewArray.ColumnCount = n + 3;
-            dataGridViewArray.RowHeadersWidth = 170;
+            dataGridViewArray.RowHeadersWidth = 192;
             for (int i = 0; i < n; i++)
                 dataGridViewArray.Rows[i].HeaderCell.Value = "Производящая отрасль №" + (i + 1).ToString();
             for (int j = 0; j < n; j++)
@@ -126,8 +126,23 @@ namespace Dip
             dataGridViewArray.Columns[n + 2].HeaderText = "КП на плановый период:";
             dataGridViewArray.Rows[n].HeaderCell.Value = "Основные фонды:";
             dataGridViewArray.Rows[n + 1].HeaderCell.Value = "Труд:";
+
+            
+            for (int i = 0; i < dataGridViewArray.RowCount; i++)
+            {
+                for (int j = 0; j < dataGridViewArray.ColumnCount; j++)
+                {
+                    dataGridViewArray.Rows[i].Cells[j].ValueType = typeof(Double);
+                }
+            }
+
+            
+           
+           
+
             MessageBox.Show("Введите значения в таблицу", "Сообщение",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
+
         }
         private void comboBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -280,7 +295,7 @@ namespace Dip
                 {
                     dataGridViewResult.Columns[j].HeaderText = "Потребляющая отрасль №" + (j + 1).ToString();
                 }
-                dataGridViewResult.RowHeadersWidth = 170;
+                dataGridViewResult.RowHeadersWidth = 192;
                 dataGridViewResult.Columns[n].HeaderText = "Конечная продукция";
                 dataGridViewResult.Columns[n + 1].HeaderText = "Валовая продукция";
                 dataGridViewResult.Rows[n].HeaderCell.Value = "Чистая продукция";
@@ -306,7 +321,6 @@ namespace Dip
                         dataGridViewResult.Rows[i].Cells[j].Value = null;
                     }
                 }
-
             }
         }
         private void dataGridViewResult_CellContentClick(object sender, DataGridViewCellEventArgs e)
