@@ -326,6 +326,16 @@ namespace Dip
         private void dataGridViewResult_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
         }
+        private void dataGridViewArray_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
+        {
+            var cell = dataGridViewArray[e.ColumnIndex, e.RowIndex] as DataGridViewTextBoxCell;
+            var isDigit = double.TryParse(cell.EditedFormattedValue.ToString(), out _);
+             if (cell.EditedFormattedValue.ToString().Contains(",") || cell.EditedFormattedValue != "" && !isDigit)
+            {
+                MessageBox.Show("not number");
+                e.Cancel = true;
+            }
+        }
     }
 }
 
