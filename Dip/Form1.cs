@@ -19,9 +19,6 @@ namespace Dip
         public MOB()
         {
             InitializeComponent();
-            comboBox1.Items.AddRange(new string[] { "Увеличиваются", "Уменьшаются", "Не меняются" });
-            comboBox2.Items.AddRange(new string[] { "Увеличиваются", "Уменьшаются", "Не меняются" });
-            comboBox3.Items.AddRange(new string[] { "Увеличиваются", "Уменьшаются", "Не меняются" });
         }
         int n;
         // текст для печати
@@ -112,7 +109,7 @@ namespace Dip
                 return;
             }
             dataGridViewArray.RowCount = n + 2;
-            dataGridViewArray.ColumnCount = n + 3;
+            dataGridViewArray.ColumnCount = n + 4;
             dataGridViewArray.RowHeadersWidth = 192;
             for (int i = 0; i < n; i++)
                 dataGridViewArray.Rows[i].HeaderCell.Value = "Производящая отрасль №" + (i + 1).ToString();
@@ -124,6 +121,7 @@ namespace Dip
             dataGridViewArray.Columns[n].HeaderText = "Конечный продукт:";
             dataGridViewArray.Columns[n + 1].HeaderText = "Валовый продукт:";
             dataGridViewArray.Columns[n + 2].HeaderText = "КП на плановый период:";
+            dataGridViewArray.Columns[n + 3].HeaderText = "Изменение отрасли, %";
             dataGridViewArray.Rows[n].HeaderCell.Value = "Основные фонды:";
             dataGridViewArray.Rows[n + 1].HeaderCell.Value = "Труд:";
 
@@ -206,11 +204,11 @@ namespace Dip
             }
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
             var operationMatrix = new OperationsMatrix();
 
-            var Xi = new double[dataGridViewArray.RowCount, dataGridViewArray.ColumnCount];
+            var Xi = new double[dataGridViewArray.RowCount , dataGridViewArray.ColumnCount];
             Matrix<double> XiM = Matrix<double>.Build.DenseOfArray(Xi);
             for (int i = 0; i < dataGridViewArray.RowCount; i++)
             {
@@ -220,16 +218,28 @@ namespace Dip
                 }
             }
             //Получение квадратной матрицы отраслей:
-            var branch = XiM.SubMatrix(0, n, 0, n);
-            if (branch.Determinant() == 0)
+            var branch0 = XiM.SubMatrix(0, n, 0, n);
+            if (branch0.Determinant() == 0)
             {
                 MessageBox.Show("Матрица отраслей непродуктивна. \nСкорректируйте данные.", "Внимание",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
-            { 
+            {
+                
                 //Получение одномерной матрицы конечной продукции:
                 var y0 = XiM.SubMatrix(0, n, n, 1);
+                //Получение одномерной матрицы коэффициентов отраслей:
+                var C = XiM.SubMatrix(0, n, n + 3, 1);
+                //Получение квадратной матрицы отраслей с учётом коэффициентов:
+                var branch = XiM.SubMatrix(0, n, 0, n);
+                for (int i = 0; i < n; i++)
+                {
+                    for (int j = 0; j < n; j++)
+                    {
+                        branch[i, j] = branch0[i, j] * (1 + (C[i, 0]/100));
+                    }
+                }
                 //Получение одномерной матрицы плановых объёмов конечной продукции:
                 var X = XiM.SubMatrix(0, n, n + 1, 1);
                 //Получение одномерной матрицы валовой продукции:
@@ -336,6 +346,10 @@ namespace Dip
                 e.Cancel = true;
             }
         }
+
+      
+
+       
     }
 }
 

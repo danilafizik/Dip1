@@ -44,27 +44,10 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridViewResult = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.dalee = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.dataGridViewArray = new System.Windows.Forms.DataGridView();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBoxCoeff3 = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBoxCoeff2 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBoxCoeff1 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.значенияВТаблицу = new System.Windows.Forms.Label();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -190,28 +173,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox1.Controls.Add(this.groupBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.dalee);
             this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.groupBox2);
+            this.groupBox1.Controls.Add(this.dalee);
             this.groupBox1.Controls.Add(this.dataGridViewArray);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.textBoxCoeff3);
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.comboBox3);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.textBoxCoeff2);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.comboBox2);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.textBoxCoeff1);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.kol);
-            this.groupBox1.Controls.Add(this.значенияВТаблицу);
             this.groupBox1.Controls.Add(this.num);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.groupBox1.Location = new System.Drawing.Point(12, 28);
@@ -229,9 +195,9 @@
             this.groupBox2.BackColor = System.Drawing.Color.Transparent;
             this.groupBox2.Controls.Add(this.dataGridViewResult);
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox2.Location = new System.Drawing.Point(0, 380);
+            this.groupBox2.Location = new System.Drawing.Point(0, 324);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(966, 247);
+            this.groupBox2.Size = new System.Drawing.Size(966, 303);
             this.groupBox2.TabIndex = 11;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Решение:";
@@ -249,31 +215,9 @@
             this.dataGridViewResult.Location = new System.Drawing.Point(6, 22);
             this.dataGridViewResult.Name = "dataGridViewResult";
             this.dataGridViewResult.ReadOnly = true;
-            this.dataGridViewResult.Size = new System.Drawing.Size(945, 219);
+            this.dataGridViewResult.Size = new System.Drawing.Size(945, 275);
             this.dataGridViewResult.TabIndex = 1;
             this.dataGridViewResult.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewResult_CellContentClick);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(354, 345);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox1.Size = new System.Drawing.Size(120, 25);
-            this.textBox1.TabIndex = 28;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label9.Location = new System.Drawing.Point(150, 348);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(197, 15);
-            this.label9.TabIndex = 27;
-            this.label9.Text = "Количество знаков после запятой:";
             // 
             // dalee
             // 
@@ -289,20 +233,6 @@
             this.dalee.UseVisualStyleBackColor = false;
             this.dalee.Click += new System.EventHandler(this.dalee_Click);
             // 
-            // button1
-            // 
-            this.button1.AutoSize = true;
-            this.button1.BackColor = System.Drawing.Color.GhostWhite;
-            this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button1.Location = new System.Drawing.Point(514, 345);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(166, 28);
-            this.button1.TabIndex = 25;
-            this.button1.Text = "Построить решение";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
             // dataGridViewArray
             // 
             this.dataGridViewArray.AllowUserToAddRows = false;
@@ -313,176 +243,20 @@
             this.dataGridViewArray.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewArray.Location = new System.Drawing.Point(0, 63);
             this.dataGridViewArray.Name = "dataGridViewArray";
-            this.dataGridViewArray.Size = new System.Drawing.Size(966, 183);
+            this.dataGridViewArray.Size = new System.Drawing.Size(966, 235);
             this.dataGridViewArray.TabIndex = 24;
             // 
-            // label7
+            // button1
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label7.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label7.Location = new System.Drawing.Point(567, 320);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(19, 17);
-            this.label7.TabIndex = 23;
-            this.label7.Text = "%";
-            // 
-            // textBoxCoeff3
-            // 
-            this.textBoxCoeff3.BackColor = System.Drawing.SystemColors.Window;
-            this.textBoxCoeff3.Location = new System.Drawing.Point(514, 317);
-            this.textBoxCoeff3.Margin = new System.Windows.Forms.Padding(4);
-            this.textBoxCoeff3.MaxLength = 10;
-            this.textBoxCoeff3.Name = "textBoxCoeff3";
-            this.textBoxCoeff3.Size = new System.Drawing.Size(45, 23);
-            this.textBoxCoeff3.TabIndex = 22;
-            this.textBoxCoeff3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.textBoxCoeff3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxCoeff3_KeyPress);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label8.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label8.Location = new System.Drawing.Point(485, 320);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(25, 17);
-            this.label8.TabIndex = 21;
-            this.label8.Text = "на:";
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(354, 314);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(120, 23);
-            this.comboBox3.TabIndex = 20;
-            this.comboBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox3_KeyPress);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label5.Location = new System.Drawing.Point(567, 291);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(19, 17);
-            this.label5.TabIndex = 19;
-            this.label5.Text = "%";
-            // 
-            // textBoxCoeff2
-            // 
-            this.textBoxCoeff2.BackColor = System.Drawing.SystemColors.Window;
-            this.textBoxCoeff2.Location = new System.Drawing.Point(514, 288);
-            this.textBoxCoeff2.Margin = new System.Windows.Forms.Padding(4);
-            this.textBoxCoeff2.MaxLength = 10;
-            this.textBoxCoeff2.Name = "textBoxCoeff2";
-            this.textBoxCoeff2.Size = new System.Drawing.Size(45, 23);
-            this.textBoxCoeff2.TabIndex = 18;
-            this.textBoxCoeff2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.textBoxCoeff2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxCoeff2_KeyPress);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label6.Location = new System.Drawing.Point(485, 291);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(25, 17);
-            this.label6.TabIndex = 17;
-            this.label6.Text = "на:";
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(354, 285);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(120, 23);
-            this.comboBox2.TabIndex = 16;
-            this.comboBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox2_KeyPress);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label4.Location = new System.Drawing.Point(567, 262);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(19, 17);
-            this.label4.TabIndex = 15;
-            this.label4.Text = "%";
-            // 
-            // textBoxCoeff1
-            // 
-            this.textBoxCoeff1.BackColor = System.Drawing.SystemColors.Window;
-            this.textBoxCoeff1.Location = new System.Drawing.Point(514, 259);
-            this.textBoxCoeff1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBoxCoeff1.MaxLength = 10;
-            this.textBoxCoeff1.Name = "textBoxCoeff1";
-            this.textBoxCoeff1.Size = new System.Drawing.Size(45, 23);
-            this.textBoxCoeff1.TabIndex = 14;
-            this.textBoxCoeff1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.textBoxCoeff1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxCoeff1_KeyPress);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label3.Location = new System.Drawing.Point(485, 262);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(25, 17);
-            this.label3.TabIndex = 13;
-            this.label3.Text = "на:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label2.Location = new System.Drawing.Point(149, 314);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(175, 15);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "Как меняются коэффициенты:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label1.Location = new System.Drawing.Point(150, 288);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(175, 15);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "Как меняются коэффициенты:";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(354, 256);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(120, 23);
-            this.comboBox1.TabIndex = 10;
-            this.comboBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox1_KeyPress);
-            // 
-            // значенияВТаблицу
-            // 
-            this.значенияВТаблицу.AutoSize = true;
-            this.значенияВТаблицу.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.значенияВТаблицу.Location = new System.Drawing.Point(150, 259);
-            this.значенияВТаблицу.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.значенияВТаблицу.Name = "значенияВТаблицу";
-            this.значенияВТаблицу.Size = new System.Drawing.Size(175, 15);
-            this.значенияВТаблицу.TabIndex = 8;
-            this.значенияВТаблицу.Text = "Как меняются коэффициенты:";
+            this.button1.AutoSize = true;
+            this.button1.BackColor = System.Drawing.Color.GhostWhite;
+            this.button1.Location = new System.Drawing.Point(412, 304);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(148, 25);
+            this.button1.TabIndex = 27;
+            this.button1.Text = "Построить решение";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // MOB
             // 
@@ -529,28 +303,11 @@
         private System.Windows.Forms.ToolStripMenuItem writeToolStripMenuItem;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label значенияВТаблицу;
         private System.Drawing.Printing.PrintDocument printDocument1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBoxCoeff1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBoxCoeff3;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBoxCoeff2;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.DataGridView dataGridViewArray;
         private System.Windows.Forms.Button dalee;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DataGridView dataGridViewResult;
+        private System.Windows.Forms.Button button1;
     }
 }
 
