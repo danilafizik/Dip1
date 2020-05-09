@@ -125,7 +125,15 @@ namespace Dip
             dataGridViewArray.Rows[n].HeaderCell.Value = "Основные фонды:";
             dataGridViewArray.Rows[n + 1].HeaderCell.Value = "Труд:";
 
+            //Задаётся значение по умолчанию для ячеек коэффициентов:
+            for (int i = 0; i < n; i++)
+            {
+                dataGridViewArray.Rows[i].Cells[n + 3].Value = 0;
+            }
             
+
+
+
             for (int i = 0; i < dataGridViewArray.RowCount; i++)
             {
                 for (int j = 0; j < dataGridViewArray.ColumnCount; j++)
